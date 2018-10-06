@@ -1,2 +1,2 @@
 # BaseDeDatos-INFO261
-Ejercicios de INFRO 261
+Ejercicios de INFO 261
