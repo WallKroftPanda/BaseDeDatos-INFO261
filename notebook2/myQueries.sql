@@ -14,6 +14,8 @@ SELECT customer_id,COUNT(*) FROM rental GROUP BY customer_id;
 /*4.3*/
 SELECT MAX(total) FROM (SELECT customer_id,count(*) as total FROM rental GROUP BY customer_id) as t1;
 /*Muestra la cantidad máxima de arriendos hecha por un cliente*/
+/*4.4*/
+/*Una subconsulta es basicamente una consulta anidada a otra consulta*/
 /*4.5*/
 SELECT staff_id,count(*) AS total FROM payment GROUP BY staff_id;
 /*4.6*/
