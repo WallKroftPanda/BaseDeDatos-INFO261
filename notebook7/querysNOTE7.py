@@ -1,0 +1,26 @@
+#1
+db.movieDetails.find().count() 
+#2
+db.movieDetails.find({},{title:1,year:1})
+#3
+db.movieDetails.find({year:{$lte:2000,$gte:2000}})
+#4
+db.movieDetails.find({awards.wins:{$gt:5}},{"title":1})
+#5
+db.movieDetails.aggregate([{$group:{"_id":1,avg_IMDB:{$avg:"$imdb.rating"}}}])
+#6
+db.movieDetails.find({actors:{$all:["Nicolas Cage"]}},{"title":1})
+#7
+db.movieDetails.aggregate([{$group:{"_id":"$year",count:{$sum:1}}}])
+#8
+db.movieDetails.find({},{"title":1}).sort({"tomato.rating":-1}).limit(1)
+#9
+db.movieDetails.find({genres:{$in:["Thriller"]},"tomato.rating":{$gte:6}},{"_id":0,"title":1})
+#10
+db.movieDetails.distinct("genres")
+#11
+db.movieDetails.find({plot:{$regex:/Star/}},{"_id":0,"title":1})
+#12
+db.movieDetails.find({"title":{$regex:/^T/}},{"_id":0,"title":1})
+#13
+db.movieDetails.find({genres:{$nin:["Drama","Thriller"]}},{"_id":0,"title":1})

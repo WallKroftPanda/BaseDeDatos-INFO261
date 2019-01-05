@@ -1,0 +1,33 @@
+#2
+#a)
+{id:1, nombre: "Juan", email: "juan@uach.cl", visita:[{idUtil: id, pagina: "A", nbVisitas: 4},{idUtil: id, pagina: "B", nbVisitas: 2}]}
+#id: integer, nombre: string, email: string, visita:[idUtil: integer, pagina:string, nbVisitas: integer]
+
+#b)
+
+#Dato estructurado
+{
+    {
+    rut:{algun_valor},
+    nombre:{algun_valor},
+    edad:{algun_valor},
+    email:{algun_valor},
+    productos:
+        [
+            {
+                id_producto:{algun_valor},
+                nombre:{algun_valor},
+                categoria:{algun_valor},
+                caracteristicas:{algun_valor},
+                pagina_de_compra:{algun_valor},
+                id_venta:{algun_valor},
+                costo:{algun_valor},
+                fecha_envio:{algun_valor},
+                fecha_llegada:{algun_valor},
+                cantidad:{algun_valor}
+            }
+        ]
+    }
+}
+
+

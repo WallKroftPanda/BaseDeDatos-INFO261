@@ -1,0 +1,17 @@
+Ejercicio:
+
+3) Para poder desplegar una API hecha en Flask, esta se podría montar en un servidor WSGI.
+
+4)El optimizador de combinacion de indices puede devolver respuestas erroneas respecto a las consultas
+debido a que no combina los resultados de las subconsultas correctamente.
+Puede presentar problemas a la hora de trabajar con datos masivos, puesto que
+MySQL tiene una restriccion de tamaño de datos, por lo cual no se recomienda
+usar MySQL cuando la cantidad de datos es masiva.
+
+5)Es una filosfía o practica que busca que determinados tipos de datos esten disponibles
+de forma libre para el mundo, sin restriccion de derechos autor, patentes, u otros
+mecanismos de control.
+Esto podria beneficiar a la población de Valdivia, de manera que cada usuario
+podría acceder a un dato de utilidad publica sin restricción en el momento
+que sea, lo cual otorga una mayor flexibilidad a la vida de los
+ciudadanos a la hora de tener que realizar algo en la ciudad.

@@ -1,0 +1,70 @@
+-4
+
+-INDICES-
+1) Un indice es un indicador para la fila de una tabla de la base de datos, 
+se usa para optimizar la velocidad de acceso a un registro 
+en la base de datos.
+2)Los indices se usan para optimizar las consultas
+en la base de datos
+3)Los tipos de indices para cada sgbd son:
+MongoDB:
+ +Indices únicos
+ +Indices parciales
+ +Indices dispersos
+ +Indices TTL
+MySQL:
+ +Indices no únicos
+ +Indices únicos
+ +Indices primarios
+ +Indices fulltext
++Indices spatial
+ 4)Al usar indices, los tiempos de inserción, actualización y
+ eliminación de datos va a ser mayor. Tambien la cantidad de
+ indices se vera limitada por la memoria ya que estos igual
+ ocupan espacio.
+ 5) Marca 0.01 segundos (pruebas realizadas marcaban mas digitos de menor orden)
+ 6)
+ CREATE INDEX mi_indice ON rental(return_date) USING HASH;
+ Marca 0.00 segundos (tambien con mas digitos de menor orden).
+ 7)
+ Mongo shell:
+ db.collection.createIndex( <key and index type specification>, <options> )
+ db.collection.createIndex( { name: -1 } )
+ Python enviroment:
+ db.collection.create_index([(<key and index type specification>)], <options> )
+ collection.create_index([("name", pymongo.DESCENDING)])
+
+ -TRANSACCIONES
+1) Una transaccion es una unidad de la ejecución de un programa que
+accede y tambien puede actualizar varios elementos de la base
+de datos a la vez.
+2)Debe garantizar la atomicidad, la consistencia de datos,
+aislamiento correspondiente de estos y durabilidad de la 
+base de datos.
+3)
+create table bank_user(name VARCHAR(10), account int);
+insert into bank_user (name,account) values("A",100000);
+insert into bank_user (name,account) values("B",0);
+4)
+start transaction;
+select @A:=account from bank_user where name="A";
+update bank_user set account=@A where name="B";
+update bank_user set account=account-@A where name="A";
+commit;
+5)Soporta operaciones ACID desde su version 4.0
+Las limitaciones en MongoDB son:
+- No puede crear/modificar/eliminar colecciones
+- Operaciones CRUD o de informacion como createUser o 
+getParameter no estan permitidas.
+
+-SHARDING Y REPLICACION
+1)El sharding consiste en particionar los datos en una
+base de datos de manera horizontal, agrupandolos de cierta
+manera para que tengan consistencia y además el tiempo
+de acceso sea rapido.
+2)La replicacion consiste en hacer una copia exacta
+de una instancia de la base de datos y 
+llevarla a otra ubicación.
+3)Tanto MySQL como MongoDB tienen formas para
+operar ambos metodos.
+
